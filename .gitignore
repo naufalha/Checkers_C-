@@ -1,0 +1,40 @@
+# Gitignore for C# environments
+
+## Build Results
+[Dd]ebug/
+[Rr]elease/
+bin/
+obj/
+[Bb]uild/
+*.log
+*.ide
+*.suo
+*.user
+*.bak
+*.ncb
+*.opendb
+*.aps
+*.bsc
+*.ilk
+*.msi
+*.pch
+*.pdb
+*.res
+*.sbr
+*.sdf
+*.ipch
+_UpgradeReport_Files/
+.vs/
+.vscode/
+
+## Packages
+## Mac
+.DS_Store
+## Linux
+*.o
+*.so
+*.lo
+*.la
+*.dll
+## Windows
+Thumbs.db
