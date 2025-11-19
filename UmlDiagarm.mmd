@@ -1,0 +1,110 @@
+---
+config:
+  theme: mc
+  look: neo
+---
+classDiagram
+    class IBoard {
+        <<interface>>
+        +Square : ICell
+    }
+    class IPiece {
+        <<interface>>
+        +Color : string
+        +Position : Position
+        +TypePiece: Enum
+    }
+    class ICell {
+        <<interface>>
+        +Position : Position
+        +Piece : IPiece
+    }
+    class Cell {
+
+        +Position : Position
+        +Piece : IPiece
+    }
+    class Position {
+        <<Struct>>
+        +X : integer
+        +Y : integer
+    }
+    class IPlayer {
+        <<interface>>
+        +Name : string
+        +Color : Enum
+    }
+    class Player {
+        +Name: string
+        +Color: Enum
+    }
+    
+    class CheckersGame {
+        - _board: IBoard 
+        - _playerData: Dictionary<.IPlayer, List<.IPiece>
+        - _players: List~IPlayer~ 
+        - _currentPlayer: IPlayer 
+        - _activePieceInJump: Position 
+        - _isInMultipleJump: bool 
+        - _status: Enum
+        - _movesWithoutCapture: integer
+        - _movesWithoutKing: integer
+        - _maxMovesWithoutProgress: const integer
+        +CheckersGame(player1, player2)
+        +StartGame():void
+        -InitializeBoardCells():void
+        -AddPieceToPlayerData(IPlayer player, IPiece piece):void
+        +GetCurrentPlayer():IPlayer
+        -GetPossibleMovesForPiece(IPiece piece, bool requireCaptureOnly):List~Tuple~Position,Position~~
+        -CanMakeaMove(IPlayer player):bool
+        -IsValidMove(Position from, Position to, out bool isCapture, out Position capturedPos):bool
+        -MovePiece(Position from, Position to):void
+        -AnyCaptureExists(IPlayer player):bool
+        -HandleCapturedPiece(Position capturedPos):void
+        -CheckMultipleJump(Position currentPosition):bool
+        -CheckAndPromote(IPiece piece):void
+        +IsDraw():bool
+        -UpdateDrawCounters(bool wasCapture, bool wasKingPromoted):void
+        -SwitchPlayer():void
+        +GetPlayerHasPiecesLeft(IPlayer player):bool
+        +GetWinner():IPlayer
+        +FinishGame(showGameStatusCallback: Action<.IPlayer>):void
+    }   
+    class CheckersBoard {
+        -_squares : ICell[,]
+    }
+    class CheckersPiece {
+        +Color : Enum
+        +Position : Position
+        +TypePiece: Enum
+    }
+    class PieceType {
+        <<enumeration>>
+        Pawn
+        King
+    }
+    class StatusType{
+        <<enumeration>>
+        NotStart
+        Play
+        Win
+        Draw
+    }
+    class PieceColor {
+        <<enumeration>>
+        Red
+        Black
+    }
+    CheckersGame "1" --> "1" IBoard
+    CheckersGame "1" --> "2" IPlayer
+    CheckersGame "1" --> "24" IPiece
+    CheckersBoard ..|> IBoard
+    CheckersPiece ..|> IPiece
+    Cell ..|> ICell
+    CheckersGame "1" *-- "1" CheckersBoard 
+    CheckersBoard "1" *-- "64" Cell
+    CheckersGame "1" *-- "2" Player
+    CheckersGame "1" *-- "24" CheckersPiece
+    Player ..|> IPlayer
+    CheckersPiece "1" --> "1" Position
+    Cell "1" --> "1" Position
