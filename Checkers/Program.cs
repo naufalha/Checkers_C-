@@ -8,40 +8,47 @@ namespace CheckersGameProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("--- CHECKPOINT 1: TESTING BOARD CREATION ---");
-
-            // 1. Coba bikin object Board
+        
             IBoard board = new CheckersBoard();
             Console.WriteLine("Board object created successfully.");
 
             // 2. Coba visualisasikan papan kosong
-            Console.WriteLine("\nVisualisasi Grid (Titik berarti null/kosong):");
-            Console.Write("  ");
-            for(int i=0; i<8; i++) Console.Write(i + " "); // Header X
+           // ... (kode atas tetap sama)
+
+            Console.WriteLine("Visualisasi Papan dengan Bidak:");
+            Console.Write("   ");
+            for (int i = 0; i < 8; i++) Console.Write($" {i} ");
             Console.WriteLine();
 
             for (int y = 0; y < 8; y++)
             {
-                Console.Write(y + " "); // Header Y
+                Console.Write($" {y} "); // Header Baris
                 for (int x = 0; x < 8; x++)
                 {
                     ICell cell = board.Squares[y, x];
                     
-                    // Validasi sederhana: Apakah koordinat cell benar?
-                    if(cell.Position.X != x || cell.Position.Y != y)
+                    // Jika kosong, gambar titik/kurung
+                    if (cell.Piece == null)
                     {
-                        Console.WriteLine($"ERROR: Koordinat salah di [{x},{y}]");
-                        return;
+                        // Kotak terang (putih) kita gambar beda biar estetik
+                        if((x+y)%2 == 0) Console.Write(" . "); 
+                        else Console.Write("[ ]");
                     }
-
-                    // Gambar titik (.) karena belum ada bidak
-                    Console.Write(". "); 
+                    else
+                    {
+                        // Jika ada isinya, cek warnanya
+                        if (cell.Piece.Color == CheckersGameProject.Core.PieceColor.Black)
+                            Console.Write("[0]"); // B = Black
+                        else
+                            Console.Write("[O]"); // W = RED
+                    }
                 }
                 Console.WriteLine();
             }
 
-            Console.WriteLine("\n--- SUKSES: Papan 8x8 terbentuk dengan valid! ---");
-            Console.ReadLine();
+// ... (kode bawah tetap sama)
+        
+
         }
     }
 }
