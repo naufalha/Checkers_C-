@@ -8,7 +8,7 @@ CheckersGameProject/
 │
 ├── Core/                <-- Tipe data dasar (Building Blocks)
 │   ├── Enums.cs         <-- (PieceType, PieceColor, StatusType)
-│   └── Position.cs      <-- (Struct Position yang sudah kita perbaiki)
+│   └── Position.cs      <-- (Struct Position 
 │
 ├── Models/              <-- Benda nyata (Implementasi)
 │   ├── CheckersPiece.cs
