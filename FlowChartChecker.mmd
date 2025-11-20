@@ -1,0 +1,12 @@
+graph TD
+    A[Start] --> B(new CheckersGame);
+    B --> C(StartGame);
+    C --> D(PrintBoard);
+    D --> E(GetCurrentPlayer);
+    E --> F(Get Player Move);
+    F --> G(MakeMove);
+    G --> H{IsGameOver?};
+    H -- No --> D;
+    H -- Yes --> I(GetWinner);
+    I --> J(Display Winner);
+    J --> K[End];
