@@ -13,7 +13,7 @@ namespace CheckersGameProject.Models
         {
             Color = color;
             Position = startPosition;
-            TypePiece = PieceType.Pawn; // Default: Pion Biasa
+            TypePiece = PieceType.Pawn; // 
         }
     }
 }
