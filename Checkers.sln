@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checkers", "Checkers\Checkers.csproj", "{AD0474AF-0E90-4F66-9F56-FCD466BD6991}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checkers.Tests", "Checkers.Tests\Checkers.Tests.csproj", "{AF7CA8AC-7F3D-491E-8F8A-6E473E8DCE4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,18 @@ Global
 		{AD0474AF-0E90-4F66-9F56-FCD466BD6991}.Release|x64.Build.0 = Release|Any CPU
 		{AD0474AF-0E90-4F66-9F56-FCD466BD6991}.Release|x86.ActiveCfg = Release|Any CPU
 		{AD0474AF-0E90-4F66-9F56-FCD466BD6991}.Release|x86.Build.0 = Release|Any CPU
+		{AF7CA8AC-7F3D-491E-8F8A-6E473E8DCE4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF7CA8AC-7F3D-491E-8F8A-6E473E8DCE4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF7CA8AC-7F3D-491E-8F8A-6E473E8DCE4D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AF7CA8AC-7F3D-491E-8F8A-6E473E8DCE4D}.Debug|x64.Build.0 = Debug|Any CPU
+		{AF7CA8AC-7F3D-491E-8F8A-6E473E8DCE4D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AF7CA8AC-7F3D-491E-8F8A-6E473E8DCE4D}.Debug|x86.Build.0 = Debug|Any CPU
+		{AF7CA8AC-7F3D-491E-8F8A-6E473E8DCE4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF7CA8AC-7F3D-491E-8F8A-6E473E8DCE4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF7CA8AC-7F3D-491E-8F8A-6E473E8DCE4D}.Release|x64.ActiveCfg = Release|Any CPU
+		{AF7CA8AC-7F3D-491E-8F8A-6E473E8DCE4D}.Release|x64.Build.0 = Release|Any CPU
+		{AF7CA8AC-7F3D-491E-8F8A-6E473E8DCE4D}.Release|x86.ActiveCfg = Release|Any CPU
+		{AF7CA8AC-7F3D-491E-8F8A-6E473E8DCE4D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
